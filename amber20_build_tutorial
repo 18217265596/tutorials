@@ -27,7 +27,7 @@ vim run_cmake
 :wq  #save and quit
 
 module load cuda
-./run_cmake
+./run_cmake -j 5
 #See build report to check everything you needed is made. in line 42 you can see CUDA turned on in line 61 you can see built tools,check if needed tools are in
 
 make install -j 5 # there can be warnings along the way, ignore them, if you cant wait for it, use slurm instead as mentioned in https://docs.hpc.sjtu.edu.cn/app/compilers_and_languages/cuda.html
