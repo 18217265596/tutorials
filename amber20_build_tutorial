@@ -1,0 +1,33 @@
+# !!when writing this i myself are doing the compling work again in a sub account with not any changed done but just empty space
+# so u can do this on siyuan hpc while all you needed is doing as followed
+
+#get your amber 20 liscence through web application (free for region outside Amberica)
+#download Amber20bunlde and AmberTools bundle at http://ambermd.org/GetAmber.php
+#upload to hpc
+
+#check files
+ls
+# there should be Amber20.tar.bz2  AmberTools21.tar.bz2 # or any other version of AmberTools
+# be noted that this tutorial only apply for amber20 and maybe higher and absolutely not for amber18 and lower version of amber since amber team changed the way amber is compiled lately
+# also be noted that you need to apply for amber liscence to use amber20 even its free for china
+
+#apply for resources the option of '-n' means number of cores applied , the more the faster. As compling may take hours on 1 core, more than 5 cores is recommended
+srun -p 64c512g -n 20 --pty /bin/bash
+
+#unzip the 2 bundle into a amber20_src
+in terminal:
+tar xvfj AmberTools20.tar.bz2 
+tar xvfj Amber20.tar.bz2
+
+cd amber20_src/build/
+ls
+#there should be clean_build  configure_cmake.py  run_cmake  run_cmake.sample
+vim run_cmake
+# in line  42     -DMPI=FALSE -DCUDA=FALSE -DINSTALL_TESTS=TRUE \   change the -DCUDA=FALSE to -DCUDA=TRURE
+:wq  #save and quit
+
+module load cuda
+./run_cmake
+#See build report to check everything you needed is made. in line 42 you can see CUDA turned on in line 61 you can see built tools,check if needed tools are in
+
+make install # there can be warnings along the way, ignore them, if you cant wait for it, use slurm instead as mentioned in https://docs.hpc.sjtu.edu.cn/app/compilers_and_languages/cuda.html
