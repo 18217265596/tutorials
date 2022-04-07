@@ -1,0 +1,93 @@
+  Build Report 
+--                              Compiler Flags: 
+-- C No-Opt:           -Wall -Wno-unused-function -Wno-unknown-pragmas -Wno-unused-variable -Wno-unused-but-set-variable -O0 
+-- C Optimized:        -Wall -Wno-unused-function -Wno-unknown-pragmas -Wno-unused-variable -Wno-unused-but-set-variable -O3 -mtune=native 
+-- 
+-- CXX No-Opt:         -Wall -Wno-unused-function -Wno-unknown-pragmas -Wno-unused-local-typedefs -Wno-unused-variable -Wno-unused-but-set-variable -O0 
+-- CXX Optimized:      -Wall -Wno-unused-function -Wno-unknown-pragmas -Wno-unused-local-typedefs -Wno-unused-variable -Wno-unused-but-set-variable -O3 -mtune=native 
+-- 
+-- Fortran No-Opt:     -Wall -Wno-tabs -Wno-unused-function -ffree-line-length-none -Wno-unused-dummy-argument -Wno-unused-variable -O0 
+-- Fortran Optimized:  -Wall -Wno-tabs -Wno-unused-function -ffree-line-length-none -Wno-unused-dummy-argument -Wno-unused-variable -O3 -mtune=native 
+-- 
+--                           3rd Party Libraries 
+-- ---building bundled: ----------------------------------------------------- 
+-- blas - for fundamental linear algebra calculations 
+-- lapack - for fundamental linear algebra calculations 
+-- arpack - for fundamental linear algebra calculations 
+-- ucpp - used as a preprocessor for the NAB compiler 
+-- netcdf - for creating trajectory data files 
+-- netcdf-fortran - for creating trajectory data files from Fortran 
+-- fftw - used to do Fourier transforms very quickly 
+-- xblas - used for high-precision linear algebra calculations 
+-- boost - C++ support library 
+-- ---using installed: ------------------------------------------------------ 
+-- readline - enables an interactive terminal in cpptraj 
+-- zlib - for various compression and decompression tasks 
+-- libbz2 - for bzip2 compression in cpptraj 
+-- libm - for fundamental math routines if they are not contained in the C library 
+-- ---disabled: ------------------------------------------------ 
+-- c9x-complex - used as a support library on systems that do not have C99 complex.h support 
+-- lio - used by Sander to run certain QM routines on the GPU 
+-- apbs - used by Sander as an alternate Poisson-Boltzmann equation solver 
+-- pupil - used by Sander as an alternate user interface 
+-- plumed - used as an alternate MD backend for Sander 
+-- mkl - alternate implementation of lapack and blas that is tuned for speed 
+-- mbx - computes energies and forces for pmemd with the MB-pol model 
+-- nccl - NVIDIA parallel GPU communication library 
+-- perlmol - chemistry library used by FEW 
+
+--                                Features: 
+-- MPI:                     OFF 
+-- OpenMP:                  OFF 
+-- CUDA:                    ON 
+-- NCCL:                    OFF 
+-- Build Shared Libraries:  ON 
+-- Build GUI Interfaces:    OFF 
+-- Build Python Programs:   ON 
+--  -Python Interpreter:    Internal Miniconda (version 3.9) 
+-- Build Perl Programs:     ON 
+-- Build configuration:     RELEASE 
+-- Target Processor:        x86_64 
+-- Build Documentation:     OFF 
+-- Sander Variants:         normal LES API LES-API 
+-- Install location:        /dssg/home/acct-clswg/clswg-sub1/amber20/ 
+-- Installation of Tests:   ON 
+
+--                               Compilers: 
+--         C: GNU 8.3.1 (/usr/bin/gcc) 
+--       CXX: GNU 8.3.1 (/usr/bin/g++) 
+--   Fortran: GNU 8.3.1 (/usr/bin/gfortran) 
+
+--                              Building Tools: 
+-- addles amberlite ambpdb antechamber cifparse cphstats cpptraj emil etc gbnsr6 gem.pmemd gpu_utils leap lib mdgx mm_pbsa mmpbsa_py moft nab ndiff-2.00 nfe-umbrella-slice nmode nmr_aux packmol_memgen paramfit parmed pbsa pdb4amber pmemd pymsmt pysander python_site_packages pytraj reduce rism sander saxs sebomd sff sqm xray xtalutil 
+
+--                            NOT Building Tools: 
+-- FEW - FEW requires perlmol 
+-- quick - BUILD_QUICK is not enabled 
+-- reaxff_puremd - BUILD_REAXFF_PUREMD is not enabled 
+-- ************************************************************************** 
+-- Environment resource files are provided to set the proper environment
+-- variables to use AMBER and AmberTools. This is required to run any Python
+-- programs (like MMPBSA.py, ParmEd, MCPB.py, and pytraj)
+-- 
+-- If you use a Bourne shell (e.g., bash, sh, zsh, etc.), source the
+-- /dssg/home/acct-clswg/clswg-sub1/amber20//amber.sh file in your shell. Consider adding the line
+--   test -f /dssg/home/acct-clswg/clswg-sub1/amber20//amber.sh && source /dssg/home/acct-clswg/clswg-sub1/amber20//amber.sh
+-- to your startup file (e.g., ~/.bashrc)
+-- 
+-- If you use a C shell (e.g., csh, tcsh), source the
+-- /dssg/home/acct-clswg/clswg-sub1/amber20//amber.csh file in your shell. Consider adding the line
+--   test -f /dssg/home/acct-clswg/clswg-sub1/amber20//amber.csh && source /dssg/home/acct-clswg/clswg-sub1/amber20//amber.csh
+-- to your startup file (e.g., ~/.cshrc)
+-- 
+-- Amber will be installed to /dssg/home/acct-clswg/clswg-sub1/amber20/
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /dssg/home/acct-clswg/clswg-sub1/amber20_src/build
+
+If the cmake build report looks OK, you should now do the following:
+
+    make install
+    source /dssg/home/acct-clswg/clswg-sub1/amber20/amber.sh
+
+Consider adding the last line to your login startup script, e.g. ~/.bashrc
