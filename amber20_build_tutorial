@@ -12,7 +12,7 @@ ls
 # also be noted that you need to apply for amber liscence to use amber20 even its free for china
 
 #apply for resources the option of '-n' means number of cores applied , the more the faster. As compling may take hours on 1 core, more than 5 cores is recommended
-srun -p 64c512g -n 20 --pty /bin/bash
+srun -p 64c512g -n 5 --pty /bin/bash
 
 #unzip the 2 bundle into a amber20_src
 in terminal:
@@ -30,4 +30,9 @@ module load cuda
 ./run_cmake
 #See build report to check everything you needed is made. in line 42 you can see CUDA turned on in line 61 you can see built tools,check if needed tools are in
 
-make install # there can be warnings along the way, ignore them, if you cant wait for it, use slurm instead as mentioned in https://docs.hpc.sjtu.edu.cn/app/compilers_and_languages/cuda.html
+make install -j 5 # there can be warnings along the way, ignore them, if you cant wait for it, use slurm instead as mentioned in https://docs.hpc.sjtu.edu.cn/app/compilers_and_languages/cuda.html
+# after long time this is done and you can now see a amber20 directory alongside amber20_src in which your executable files lie
+source ../../amber20/amber.sh
+vim ~/.bashrc #add source ~/.../whateveryourdirectory/amber.sh in it
+cd $AMBERHOME
+make test.serial # if you wish
